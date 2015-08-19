@@ -87,14 +87,14 @@ public class RelatorioNomeControle {
 								try{
 									// compilacao do JRXML
 									JasperReport report = JasperCompileManager.compileReport("relatorios/relatorioNome.jrxml");
-									JasperReport reportSub = JasperCompileManager.compileReport("D:/Users/Jerônimo Hermano/.eclipse/SiD - V2/relatorios/relatorioNome_subreport.jrxml");
+									JasperReport reportSub = JasperCompileManager.compileReport("relatorios/relatorioNome_subreport.jrxml");
 									
 																			
 									Map<String, Object> parametro = new HashMap<String, Object>();
 										parametro.put("LOCALIZACAO", reportSub);
 										parametro.put("listFluxo", lista.get(0).getListFluxo());
 									
-									JasperPrint print = JasperFillManager.fillReport(report, parametro, new JRBeanCollectionDataSource(lista));
+									JasperPrint print = JasperFillManager.fillReport(report, null, new JRBeanCollectionDataSource(lista));
 																		
 									// exportacao do relatorio para outro formato, no caso PDF
 										Calendar dataAtual = Calendar.getInstance(new Locale("pt","br"));//Pega a data atual do sistema

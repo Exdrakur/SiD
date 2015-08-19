@@ -11,6 +11,7 @@ public class RelatorioModelo {
 		this.rg=rg;
 		this.orgaoExp=orgaoExp;
 		this.fone=fone;
+		//Aqui faz a codificação da data e da hora
 		this.hrEntrada=hrEntrada.substring(0,8);
 		this.hrSaida=hrSaida.substring(0,8);
 		this.data=(data.substring(8,10)+"/"+data.substring(5,7)+"/"+data.substring(0,4));

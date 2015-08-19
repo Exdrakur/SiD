@@ -8,9 +8,10 @@ public class FluxoModelo {
 	private String hrSaida;
 	
 	public FluxoModelo(String data, String hrEntrada, String hrSaida){
-		this.data=data;
-		this.hrEntrada=hrEntrada;
-		this.hrSaida=hrSaida;
+		//Aqui faz a codificação da data e da hora
+		this.data=(data.substring(8,10)+"/"+data.substring(5,7)+"/"+data.substring(0,4));
+		this.hrEntrada=hrEntrada.substring(0,8);
+		this.hrSaida=hrSaida.substring(0,8);
 	}
 	
 	public int getCpf() {return cpf;}

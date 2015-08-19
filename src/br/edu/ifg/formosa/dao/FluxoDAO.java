@@ -62,9 +62,9 @@ public class FluxoDAO {
 			ResultSet rS = pS.executeQuery();
 			while (rS.next()) {
 				Vector<String> linha=new Vector<String>();
-					linha.add(rS.getString("data"));
-					linha.add(rS.getString("hrEntrada"));
-					linha.add(rS.getString("hrSaida"));
+					linha.add(rS.getString("data").substring(8,10)+"/"+rS.getString("data").substring(5,7)+"/"+rS.getString("data").substring(0,4));
+					linha.add(rS.getString("hrEntrada").substring(0,8));
+					linha.add(rS.getString("hrSaida").substring(0,8));
 				resultado.add(linha);
 			}
 			pS.close();

@@ -9,7 +9,9 @@ import br.edu.ifg.formosa.view.LoginRecepcionistaView;
 public class IFaceBadgeTeste {
 
 	public static void main(String[] args) {
-		try {	UIManager.setLookAndFeel(new NimbusLookAndFeel());	}
+		try {	
+			UIManager.setLookAndFeel(new NimbusLookAndFeel());	
+			}
 		catch(Exception e){	e.printStackTrace();	}		
 //		 System.out.println(System.getProperty("user.home")+System.getProperty("file.separator"));
 		LoginRecepcionistaView lRV = new LoginRecepcionistaView();

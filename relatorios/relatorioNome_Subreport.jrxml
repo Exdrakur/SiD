@@ -11,15 +11,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="33" splitType="Stretch">
-			<staticText>
-				<reportElement x="188" y="0" width="180" height="33" uuid="69741fa7-9ba9-425c-9225-328f3787f4f4"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Segoe UI Light" size="20" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Fluxo]]></text>
-			</staticText>
-		</band>
+		<band splitType="Stretch"/>
 	</title>
 	<pageHeader>
 		<band splitType="Stretch"/>

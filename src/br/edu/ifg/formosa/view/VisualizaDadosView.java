@@ -91,7 +91,7 @@ public class VisualizaDadosView extends JInternalFrame{
 		btnImprimir = new JButton("Imprimir");
 		btnImprimir.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		btnImprimir.setBounds(200, 360, 100, 25);
-		btnImprimir.setEnabled(false);
+		btnImprimir.setEnabled(true);
 		getContentPane().add(btnImprimir);
 		
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);	

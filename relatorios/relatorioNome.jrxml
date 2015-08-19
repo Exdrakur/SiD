@@ -3,7 +3,9 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="LOCALIZACAO" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:\\Users\\Gabriel Hamerski\\git\\SiD\\relatorios\\"]]></defaultValueExpression>
+	</parameter>
 	<field name="listFluxo" class="java.util.List"/>
 	<field name="nome" class="java.lang.String"/>
 	<field name="rg" class="java.lang.String"/>
@@ -15,7 +17,7 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="10" y="10" width="555" height="43" forecolor="#666666" uuid="1a90d317-202e-452f-94b8-bf69bb29af7f"/>
+				<reportElement x="0" y="10" width="555" height="43" forecolor="#666666" uuid="1a90d317-202e-452f-94b8-bf69bb29af7f"/>
 				<textElement textAlignment="Center">
 					<font size="28" isBold="true"/>
 				</textElement>
@@ -34,56 +36,67 @@
 		<band height="1" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="21" splitType="Stretch">
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="76" splitType="Stretch">
+			<textField>
+				<reportElement x="56" y="34" width="111" height="20" uuid="0d81ea2a-097c-4884-8680-cca8a428c533"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="34" width="77" height="20" uuid="4f9bf0e4-22e8-4573-8c59-67cc279d7c69"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{orgaoExp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="34" width="150" height="20" uuid="11b41385-b2dd-41cc-8049-e36c081f8fff"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fone}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="66" width="555" height="1" uuid="792f31ba-707b-4259-a55f-806ec77c855f"/>
+			</line>
+			<textField>
+				<reportElement x="109" y="8" width="446" height="20" uuid="27adbda7-5fcb-484b-92b4-92e953be6714"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement mode="Opaque" x="355" y="1" width="160" height="20" forecolor="#000000" backcolor="#F5F5F5" uuid="88394f2a-f99e-49ea-bf9f-ef77b5315ae5"/>
+				<reportElement mode="Opaque" x="0" y="8" width="99" height="20" forecolor="#000000" backcolor="#F5F5F5" uuid="c2a99e06-8727-42f9-b662-bc95fc7606a4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="332" y="34" width="65" height="20" forecolor="#000000" backcolor="#F5F5F5" uuid="88394f2a-f99e-49ea-bf9f-ef77b5315ae5"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Telefone]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="195" y="1" width="160" height="20" forecolor="#000000" backcolor="#F5F5F5" uuid="0ea3e91d-9104-4dda-9f99-f87c0012c931"/>
+				<reportElement mode="Opaque" x="0" y="34" width="46" height="20" forecolor="#000000" backcolor="#F5F5F5" uuid="0c4e84e9-b66a-42bf-872c-53a8c74d43d9"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[RG / Órgão]]></text>
+				<text><![CDATA[RG]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="36" y="1" width="160" height="20" forecolor="#000000" backcolor="#F5F5F5" uuid="c2a99e06-8727-42f9-b662-bc95fc7606a4"/>
+				<reportElement mode="Opaque" x="177" y="34" width="61" height="20" forecolor="#000000" backcolor="#F5F5F5" uuid="0ec4d764-018b-4845-b7b8-142a03431bf3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Nome]]></text>
+				<text><![CDATA[Órgão]]></text>
 			</staticText>
 		</band>
-	</columnHeader>
-	<detail>
-		<band height="145" splitType="Stretch">
-			<textField>
-				<reportElement x="36" y="6" width="160" height="20" uuid="27adbda7-5fcb-484b-92b4-92e953be6714"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="195" y="6" width="100" height="20" uuid="0d81ea2a-097c-4884-8680-cca8a428c533"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{rg}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="295" y="6" width="60" height="20" uuid="4f9bf0e4-22e8-4573-8c59-67cc279d7c69"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{orgaoExp}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="355" y="6" width="160" height="20" uuid="11b41385-b2dd-41cc-8049-e36c081f8fff"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{fone}]]></textFieldExpression>
-			</textField>
+		<band height="76">
 			<subreport>
-				<reportElement x="36" y="45" width="479" height="100" uuid="adc1ef25-58d3-4ff1-b108-46b181292c16"/>
+				<reportElement x="0" y="0" width="555" height="76" uuid="adc1ef25-58d3-4ff1-b108-46b181292c16"/>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{listFluxo})]]></dataSourceExpression>
-				<subreportExpression><![CDATA[$P{LOCALIZACAO}]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "relatorioNome_Subreport.jasper"]]></subreportExpression>
 			</subreport>
 		</band>
 	</detail>
@@ -94,6 +107,6 @@
 		<band splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="13" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</summary>
 </jasperReport>
