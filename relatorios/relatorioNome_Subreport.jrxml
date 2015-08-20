@@ -3,7 +3,7 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="LOCALIZACAO" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
 	<field name="data" class="java.lang.String"/>
 	<field name="hrEntrada" class="java.lang.String"/>
 	<field name="hrSaida" class="java.lang.String"/>

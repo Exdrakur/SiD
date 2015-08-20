@@ -4,6 +4,7 @@ import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.net.URL;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -85,29 +86,30 @@ public class RelatorioNomeControle {
 								lista.add(new PessoaRelatorioModelo(pM, fluxo));
 						//Adicionar funções do Report
 								try{
-									// compilacao do JRXML
+									// Compilação do JRXML
 									JasperReport report = JasperCompileManager.compileReport("relatorios/relatorioNome.jrxml");
-									JasperReport reportSub = JasperCompileManager.compileReport("relatorios/relatorioNome_subreport.jrxml");
+									//JasperReport reportSub = JasperCompileManager.compileReport("relatorios/relatorioNome_Subreport.jrxml");
 									
+									URL web = getClass().getResource("../../../../../relatorios/");
+									System.out.println(web.toString());
 																			
 									Map<String, Object> parametro = new HashMap<String, Object>();
-										parametro.put("LOCALIZACAO", reportSub);
-										parametro.put("listFluxo", lista.get(0).getListFluxo());
+										parametro.put("SUBREPORT_DIR", web.toString());
 									
-									JasperPrint print = JasperFillManager.fillReport(report, null, new JRBeanCollectionDataSource(lista));
+									JasperPrint print = JasperFillManager.fillReport(report, parametro, new JRBeanCollectionDataSource(lista));
 																		
-									// exportacao do relatorio para outro formato, no caso PDF
-										Calendar dataAtual = Calendar.getInstance(new Locale("pt","br"));//Pega a data atual do sistema
-											DateFormat dF = DateFormat.getDateInstance();//Utilizado para a conversão de Date para String
-											String separadorSO =System.getProperty("file.separator");//Separador de pastas do SO \ para Windows e / para Linux
-										String caminhoArquivo=System.getProperty("user.home")+separadorSO+"Desktop"+separadorSO+"Relatório de fluxo por nome - SiD "+pM.getNome()+" "+dF.format((dataAtual.getTime())).replace("/", ".")+".pdf";
+									// Exportação do relatório para outro formato, no caso PDF
+									Calendar dataAtual = Calendar.getInstance(new Locale("pt","br"));//Pega a data atual do sistema
+									DateFormat dF = DateFormat.getDateInstance();//Utilizado para a conversão de Date para String
+									String separadorSO =System.getProperty("file.separator");//Separador de pastas do SO \ para Windows e / para Linux
+									String caminhoArquivo=System.getProperty("user.home")+separadorSO+"Desktop"+separadorSO+"Relatório de fluxo por nome - SiD "+pM.getNome()+" "+dF.format((dataAtual.getTime())).replace("/", ".")+".pdf";
 									
 									JasperExportManager.exportReportToPdfFile(print,caminhoArquivo);
 									
 									//Abre o arquivo
-										Desktop.getDesktop().open(new File(caminhoArquivo));
+									Desktop.getDesktop().open(new File(caminhoArquivo));
 								} catch (Exception ex){
-									System.err.println(ex);
+									System.err.println(ex.getMessage());
 								}
 						
 						//Fecha a janela
