@@ -14,7 +14,7 @@ public class VisitanteTableModel extends AbstractTableModel{
 	Class<?>[] classes = { Integer.class, String.class, String.class, ImageIcon.class, ImageIcon.class, ImageIcon.class, ImageIcon.class, Boolean.class};
 	//ID - Nomes - Fone - Fluxo - Ver - Editar - Excluir - Situação de Fluxo(True=Dentro,False=Fora)
      private Vector<PessoaModelo> linhas;
-     private String[] colunas = {"ID","Nome","Telefone","Fluxo","Ver","Editar","Excluir","Situacao"};//Nome das colunas
+     private String[] colunas = {"ID","Nome","Telefone","Fluxo","","","","Situacao"};//Nome das colunas
      private final int ID=0, NOME=1,FONE=2,FLUXO=3,VER=4,EDITAR=5,EXCLUIR=6,SITUACAO_FLUXO=7;
      
      //Construtor

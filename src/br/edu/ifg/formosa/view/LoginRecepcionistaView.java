@@ -71,11 +71,10 @@ public class LoginRecepcionistaView extends JFrame{
 			fTxtCPF.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 			fTxtCPF.setBounds(70, 65, 200, 25);
 			getContentPane().add(fTxtCPF);
-			
 			fTxtCPF.setText("08007317124");
+			
 		}catch (ParseException e) {	e.printStackTrace();		}
 		
-//		pwSenha = new JPasswordField("Infonet2012ÉD+");
 		pwSenha = new JPasswordField("123abc");
 		pwSenha.setFont(new Font("Segoe UI", Font.PLAIN, 15));
 		pwSenha.setBounds(70, 95, 200, 25);

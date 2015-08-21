@@ -12,7 +12,7 @@ public class ConnectionFactory {
              * if(=ADM){
              * 		 return DriverManager.getConnection("jdbc:postgresql://localhost:5432/dbTeste", "administrador", "1349237590");
              * }
-             * lse{REC
+             * else{REC
              * 		 return DriverManager.getConnection("jdbc:postgresql://localhost:5432/dbTeste", "usuario", "çkajlkdsnf");
              * }
              */
